@@ -22,6 +22,7 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        return arrayList.stream().filter(number -> number%2==1).collect(Collectors.toList()).size() - 1;
+        List<Integer> oddFilteredList = arrayList.stream().filter(number -> number%2==1).collect(Collectors.toList());
+        return oddFilteredList.get(oddFilteredList.size()-1);
     }
 }
