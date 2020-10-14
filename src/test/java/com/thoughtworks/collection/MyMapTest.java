@@ -40,7 +40,7 @@ public class MyMapTest {
     @Test
     public void should_sort_from_big_to_small() {
         //order from big to small
-        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
+        Integer[] array = new Integer[]{2, 1, 3, 4, 5};
         List<Integer> list = Arrays.asList(array);
 
         MyMap myMap = new MyMap(list);

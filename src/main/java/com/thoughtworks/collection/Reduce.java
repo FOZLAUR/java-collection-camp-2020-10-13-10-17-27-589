@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import org.apache.commons.lang3.NotImplementedException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Reduce {
 
@@ -13,14 +14,14 @@ public class Reduce {
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        return arrayList.stream().mapToDouble(Integer::doubleValue).reduce(0,Double::sum) / arrayList.size();
     }
 
     public int getMaxValue() {
-        throw new NotImplementedException();
+        return arrayList.stream().reduce(0, Integer::max);
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.stream().filter(number -> number%2==1).collect(Collectors.toList()).size() - 1;
     }
 }
